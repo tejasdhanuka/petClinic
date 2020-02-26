@@ -15,8 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pet" translatesAutoresizingMaskIntoConstraints="NO" id="fYW-sT-KGb">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pet Clinic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCh-Fn-Hxh">
-                                <rect key="frame" x="130.5" y="427" width="153.5" height="42"/>
+                                <rect key="frame" x="130.5" y="147" width="153.5" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -24,8 +27,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fYW-sT-KGb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0cQ-jK-Tmv"/>
+                            <constraint firstItem="fYW-sT-KGb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DnL-MN-TIC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fYW-sT-KGb" secondAttribute="trailing" id="NIZ-Lf-wO9"/>
+                            <constraint firstItem="VCh-Fn-Hxh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="103" id="Wsg-oC-g2X"/>
                             <constraint firstItem="VCh-Fn-Hxh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kAk-nI-QCX"/>
-                            <constraint firstItem="VCh-Fn-Hxh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="pQK-kG-Jhu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fYW-sT-KGb" secondAttribute="bottom" id="uBJ-HS-pDi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -35,4 +42,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pet" width="1000" height="562"/>
+    </resources>
 </document>

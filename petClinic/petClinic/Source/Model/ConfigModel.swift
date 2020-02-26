@@ -9,22 +9,24 @@
 import Foundation
 import Combine
 
-struct Config: Decodable {
+struct Config {
     var isChatEnabled: Bool?
     var isCallEnabled: Bool?
     var workHours: String
 }
 
 class Configuration: ObservableObject {
-    var objectWillChange = ObservableObjectPublisher()
-      
-      var config = Config(isChatEnabled: nil, isCallEnabled: nil, workHours: "") {
-          willSet {
-              objectWillChange.send()
-          }
-      }
+//    var objectWillChange = ObservableObjectPublisher()
+//
+//      var config = Config(isChatEnabled: nil, isCallEnabled: nil, workHours: "") {
+//          willSet {
+//              objectWillChange.send()
+//          }
+//      }
     
-    init() {
+    @Published var config = Config(isChatEnabled: nil, isCallEnabled: nil, workHours: "")
+    
+    func fetch() {
         guard let path = Bundle.main.path(forResource: "config", ofType: "json") else { return }
         let url = URL(fileURLWithPath: path)
         
@@ -40,12 +42,11 @@ class Configuration: ObservableObject {
             guard let callEnabled = settingsDict["isCallEnabled"] as? Bool else { return }
             guard let workHours = settingsDict["workHours"] as? String else { return }
             
-            self.config.isCallEnabled = chatEnabled
-            self.config.isCallEnabled = callEnabled
-            self.config.workHours = workHours
+            config = Config(isChatEnabled: chatEnabled, isCallEnabled: callEnabled, workHours: workHours)
         }
         catch {
             print(error)
+            return
         }
     }
 }

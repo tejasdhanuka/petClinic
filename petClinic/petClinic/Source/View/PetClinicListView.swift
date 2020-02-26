@@ -12,17 +12,17 @@ import Combine
 
 struct PetClinicListView: View {
     @ObservedObject var networkingManager = NetworkingManager()
-    @ObservedObject var configuration = Configuration()
-    @State private var showAlert = false
+    @State var showAlert = false
+    @ObservedObject var configuation = Configuration()
     
     var body: some View {
         NavigationView {
             VStack {
-                ContactButtonsView(configuration: configuration, showAlert: $showAlert)
+                ContactButtonsView(config: configuation.config, showAlert: $showAlert)
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .padding(.top, 20)
                 
-                Text("Office Hours: \(configuration.config.workHours)")
+                Text("Office Hours: \(configuation.config.workHours)")
                     .frame(height: 44)
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
@@ -38,16 +38,19 @@ struct PetClinicListView: View {
                   message: Date().isTimeWithinWorkHours() ? Text("We’ll get back to you as soon as possible") : Text("Please contact us again on the next work day"),
                   dismissButton: .default(Text("OK")))
         }
+        .onAppear {
+            self.configuation.fetch()
+        }
     }
 }
 
 struct ContactButtonsView: View {
-    let configuration: Configuration
+    let config: Config
     @Binding var showAlert: Bool
 
     var body: some View {
         HStack {
-            if configuration.config.isChatEnabled ?? true {
+            if config.isChatEnabled ?? true {
                 Button(action: {
                     self.showAlert = true
                 }, label: {
@@ -65,7 +68,7 @@ struct ContactButtonsView: View {
                 EmptyView()
             }
             
-            if configuration.config.isCallEnabled ?? true {
+            if config.isCallEnabled ?? true {
                 Button(action: {
                     self.showAlert = true
                 }, label: {
