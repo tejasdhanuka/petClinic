@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		023D16B023FE1BA900CFFE24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D16AF23FE1BA900CFFE24 /* AppDelegate.swift */; };
 		023D16B223FE1BA900CFFE24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D16B123FE1BA900CFFE24 /* SceneDelegate.swift */; };
-		023D16B423FE1BA900CFFE24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D16B323FE1BA900CFFE24 /* ContentView.swift */; };
+		023D16B423FE1BA900CFFE24 /* PetClinicListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D16B323FE1BA900CFFE24 /* PetClinicListView.swift */; };
 		023D16B623FE1BAB00CFFE24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023D16B523FE1BAB00CFFE24 /* Assets.xcassets */; };
 		023D16B923FE1BAB00CFFE24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 023D16B823FE1BAB00CFFE24 /* Preview Assets.xcassets */; };
 		023D16BC23FE1BAB00CFFE24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 023D16BA23FE1BAB00CFFE24 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,12 @@
 		023D16D223FE1BAB00CFFE24 /* petClinicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D16D123FE1BAB00CFFE24 /* petClinicUITests.swift */; };
 		026B7C212404E06B00A9CEC8 /* PetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B7C202404E06B00A9CEC8 /* PetsModel.swift */; };
 		026B7C23240507D100A9CEC8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B7C22240507D100A9CEC8 /* NetworkManager.swift */; };
+		02836C9D240620C20068357B /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 02836C9C240620C20068357B /* config.json */; };
+		02836C9F240625B80068357B /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02836C9E240625B80068357B /* ConfigModel.swift */; };
+		02836CA124062FC10068357B /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02836CA024062FC10068357B /* WebView.swift */; };
+		02836CA3240630230068357B /* PetDetailsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02836CA2240630230068357B /* PetDetailsInfoView.swift */; };
+		02836CA7240630F20068357B /* ImageLoaderUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02836CA6240630F20068357B /* ImageLoaderUtility.swift */; };
+		02836CA9240631C20068357B /* ImageViewWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02836CA8240631C20068357B /* ImageViewWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +46,7 @@
 		023D16AC23FE1BA900CFFE24 /* petClinic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = petClinic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		023D16AF23FE1BA900CFFE24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		023D16B123FE1BA900CFFE24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		023D16B323FE1BA900CFFE24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		023D16B323FE1BA900CFFE24 /* PetClinicListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetClinicListView.swift; sourceTree = "<group>"; };
 		023D16B523FE1BAB00CFFE24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		023D16B823FE1BAB00CFFE24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		023D16BB23FE1BAB00CFFE24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +59,12 @@
 		023D16D323FE1BAB00CFFE24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		026B7C202404E06B00A9CEC8 /* PetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsModel.swift; sourceTree = "<group>"; };
 		026B7C22240507D100A9CEC8 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		02836C9C240620C20068357B /* config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = config.json; sourceTree = "<group>"; };
+		02836C9E240625B80068357B /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
+		02836CA024062FC10068357B /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		02836CA2240630230068357B /* PetDetailsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsInfoView.swift; sourceTree = "<group>"; };
+		02836CA6240630F20068357B /* ImageLoaderUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderUtility.swift; sourceTree = "<group>"; };
+		02836CA8240631C20068357B /* ImageViewWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWidget.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,12 +115,9 @@
 		023D16AE23FE1BA900CFFE24 /* petClinic */ = {
 			isa = PBXGroup;
 			children = (
-				023D16AF23FE1BA900CFFE24 /* AppDelegate.swift */,
-				023D16B123FE1BA900CFFE24 /* SceneDelegate.swift */,
-				026B7C242405132200A9CEC8 /* Source */,
-				023D16B523FE1BAB00CFFE24 /* Assets.xcassets */,
-				023D16BA23FE1BAB00CFFE24 /* LaunchScreen.storyboard */,
 				023D16BD23FE1BAB00CFFE24 /* Info.plist */,
+				02836CA42406309B0068357B /* Resources */,
+				026B7C242405132200A9CEC8 /* Source */,
 				023D16B723FE1BAB00CFFE24 /* Preview Content */,
 			);
 			path = petClinic;
@@ -143,9 +152,10 @@
 		026B7C242405132200A9CEC8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				026B7C252405132B00A9CEC8 /* View */,
 				026B7C272405134300A9CEC8 /* Model */,
 				026B7C262405133700A9CEC8 /* NetworkRequest */,
-				026B7C252405132B00A9CEC8 /* View */,
+				02836CA5240630D60068357B /* Utilities */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -153,7 +163,9 @@
 		026B7C252405132B00A9CEC8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				023D16B323FE1BA900CFFE24 /* ContentView.swift */,
+				023D16B323FE1BA900CFFE24 /* PetClinicListView.swift */,
+				02836CA2240630230068357B /* PetDetailsInfoView.swift */,
+				02836CA8240631C20068357B /* ImageViewWidget.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,8 +182,30 @@
 			isa = PBXGroup;
 			children = (
 				026B7C202404E06B00A9CEC8 /* PetsModel.swift */,
+				02836C9E240625B80068357B /* ConfigModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		02836CA42406309B0068357B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				023D16BA23FE1BAB00CFFE24 /* LaunchScreen.storyboard */,
+				023D16B523FE1BAB00CFFE24 /* Assets.xcassets */,
+				023D16B123FE1BA900CFFE24 /* SceneDelegate.swift */,
+				023D16AF23FE1BA900CFFE24 /* AppDelegate.swift */,
+				02836C9C240620C20068357B /* config.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		02836CA5240630D60068357B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				02836CA024062FC10068357B /* WebView.swift */,
+				02836CA6240630F20068357B /* ImageLoaderUtility.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				023D16BC23FE1BAB00CFFE24 /* LaunchScreen.storyboard in Resources */,
+				02836C9D240620C20068357B /* config.json in Resources */,
 				023D16B923FE1BAB00CFFE24 /* Preview Assets.xcassets in Resources */,
 				023D16B623FE1BAB00CFFE24 /* Assets.xcassets in Resources */,
 			);
@@ -306,10 +341,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				023D16B023FE1BA900CFFE24 /* AppDelegate.swift in Sources */,
+				02836CA3240630230068357B /* PetDetailsInfoView.swift in Sources */,
+				02836C9F240625B80068357B /* ConfigModel.swift in Sources */,
 				023D16B223FE1BA900CFFE24 /* SceneDelegate.swift in Sources */,
 				026B7C23240507D100A9CEC8 /* NetworkManager.swift in Sources */,
-				023D16B423FE1BA900CFFE24 /* ContentView.swift in Sources */,
+				023D16B423FE1BA900CFFE24 /* PetClinicListView.swift in Sources */,
 				026B7C212404E06B00A9CEC8 /* PetsModel.swift in Sources */,
+				02836CA7240630F20068357B /* ImageLoaderUtility.swift in Sources */,
+				02836CA9240631C20068357B /* ImageViewWidget.swift in Sources */,
+				02836CA124062FC10068357B /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
