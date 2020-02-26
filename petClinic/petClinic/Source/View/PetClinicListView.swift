@@ -13,49 +13,14 @@ import Combine
 struct PetClinicListView: View {
     @ObservedObject var networkingManager = NetworkingManager()
     @ObservedObject var configuration = Configuration()
+    @State private var showAlert = false
     
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
-                    if configuration.config.isChatEnabled ?? true {
-                        Button(action: {
-                            
-                        }, label: {
-                            Text("Chat")
-                                .font(.body)
-                                .padding()
-                                .foregroundColor(.white)
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                        })
-                            .background(Color.blue)
-                            .cornerRadius(10)
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .padding(.horizontal, 10)
-                    } else {
-                        EmptyView()
-                    }
-                    
-                    if configuration.config.isCallEnabled ?? true {
-                        Button(action: {
-                            
-                        }, label: {
-                            Text("Call")
-                                .font(.body)
-                                .padding()
-                                .foregroundColor(.white)
-                                .frame(minWidth: 0, maxWidth: .infinity)
-                        })
-                            .background(Color.green)
-                            .cornerRadius(10)
-                            .frame(minWidth: 0, maxWidth: .infinity)
-                            .padding(.horizontal, 10)
-                    } else {
-                        EmptyView()
-                    }
-                }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .padding(.top, 20)
+                ContactButtonsView(configuration: configuration, showAlert: $showAlert)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding(.top, 20)
                 
                 Text("Office Hours: \(configuration.config.workHours)")
                     .frame(height: 44)
@@ -64,13 +29,71 @@ struct PetClinicListView: View {
                     .padding(.horizontal, 10)
                     .padding(.bottom, 10)
                 
-                List(networkingManager.petsList.results, id: \.title) { pet in
-                    NavigationLink(destination: PetDetailsInfoView(petInfo: pet)) {
-                        PetRow(pet: pet)
-                    }
-                }
+                PetListView(networkingManager: networkingManager)
             }
             .navigationBarTitle(Text("Pet Clinic"), displayMode: .inline)
+        }
+        .alert(isPresented: $showAlert) {
+            Alert(title: Date().isTimeWithinWorkHours() ? Text("Thank you for getting in touch with us") : Text("Work hours has ended"),
+                  message: Date().isTimeWithinWorkHours() ? Text("We’ll get back to you as soon as possible") : Text("Please contact us again on the next work day"),
+                  dismissButton: .default(Text("OK")))
+        }
+    }
+}
+
+struct ContactButtonsView: View {
+    let configuration: Configuration
+    @Binding var showAlert: Bool
+
+    var body: some View {
+        HStack {
+            if configuration.config.isChatEnabled ?? true {
+                Button(action: {
+                    self.showAlert = true
+                }, label: {
+                    Text("Chat")
+                        .font(.body)
+                        .padding()
+                        .foregroundColor(.white)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                })
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding(.horizontal, 10)
+            } else {
+                EmptyView()
+            }
+            
+            if configuration.config.isCallEnabled ?? true {
+                Button(action: {
+                    self.showAlert = true
+                }, label: {
+                    Text("Call")
+                        .font(.body)
+                        .padding()
+                        .foregroundColor(.white)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                })
+                    .background(Color.green)
+                    .cornerRadius(10)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .padding(.horizontal, 10)
+            } else {
+                EmptyView()
+            }
+        }
+    }
+}
+
+struct PetListView: View {
+    let networkingManager: NetworkingManager
+
+    var body: some View {
+        List(networkingManager.petsList.results, id: \.title) { pet in
+            NavigationLink(destination: PetDetailsInfoView(petInfo: pet)) {
+                PetRow(pet: pet)
+            }
         }
     }
 }
@@ -86,4 +109,3 @@ struct PetRow: View {
         }
     }
 }
-

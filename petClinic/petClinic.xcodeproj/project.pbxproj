@@ -23,6 +23,7 @@
 		02836CA3240630230068357B /* PetDetailsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02836CA2240630230068357B /* PetDetailsInfoView.swift */; };
 		02836CA7240630F20068357B /* ImageLoaderUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02836CA6240630F20068357B /* ImageLoaderUtility.swift */; };
 		02836CA9240631C20068357B /* ImageViewWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02836CA8240631C20068357B /* ImageViewWidget.swift */; };
+		02836CAB240639500068357B /* TimeRangeComparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02836CAA240639500068357B /* TimeRangeComparator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		02836CA2240630230068357B /* PetDetailsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailsInfoView.swift; sourceTree = "<group>"; };
 		02836CA6240630F20068357B /* ImageLoaderUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderUtility.swift; sourceTree = "<group>"; };
 		02836CA8240631C20068357B /* ImageViewWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewWidget.swift; sourceTree = "<group>"; };
+		02836CAA240639500068357B /* TimeRangeComparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeComparator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			children = (
 				02836CA024062FC10068357B /* WebView.swift */,
 				02836CA6240630F20068357B /* ImageLoaderUtility.swift */,
+				02836CAA240639500068357B /* TimeRangeComparator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02836CAB240639500068357B /* TimeRangeComparator.swift in Sources */,
 				023D16B023FE1BA900CFFE24 /* AppDelegate.swift in Sources */,
 				02836CA3240630230068357B /* PetDetailsInfoView.swift in Sources */,
 				02836C9F240625B80068357B /* ConfigModel.swift in Sources */,
