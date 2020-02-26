@@ -14,50 +14,57 @@ struct ContentView: View {
     @ObservedObject var networkingManager = NetworkingManager()
     
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: {
-                    
-                }, label: {
-                    Text("Chat")
-                        .font(.body)
-                        .padding()
-                        .foregroundColor(.white)
+        NavigationView {
+            VStack {
+                HStack {
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Chat")
+                            .font(.body)
+                            .padding()
+                            .foregroundColor(.white)
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                    })
+                        .background(Color.blue)
+                        .cornerRadius(10)
                         .frame(minWidth: 0, maxWidth: .infinity)
-                })
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding(.horizontal, 10)
-                
-                Button(action: {
+                        .padding(.horizontal, 10)
                     
-                }, label: {
-                    Text("Call")
-                        .font(.body)
-                        .padding()
-                        .foregroundColor(.white)
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Call")
+                            .font(.body)
+                            .padding()
+                            .foregroundColor(.white)
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                    })
+                        .background(Color.green)
+                        .cornerRadius(10)
                         .frame(minWidth: 0, maxWidth: .infinity)
-                })
-                    .background(Color.green)
-                    .cornerRadius(10)
-                    .frame(minWidth: 0, maxWidth: .infinity)
-                    .padding(.horizontal, 10)
-            }
-            .frame(minWidth: 0, maxWidth: .infinity)
-            
-            Text("Office Hours: M-F 10:00 - 18:00")
-                .frame(height: 44)
+                        .padding(.horizontal, 10)
+                }
                 .frame(minWidth: 0, maxWidth: .infinity)
-                .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
-                .padding(.horizontal, 10)
-           
-            List(networkingManager.petsList.results, id: \.title) { pet in
-                    PetRow(pet: pet)
+                .padding(.top, 20)
+                
+                Text("Office Hours: M-F 10:00 - 18:00")
+                    .frame(height: 44)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .background(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                    .padding(.horizontal, 10)
+                    .padding(.bottom, 10)
+                
+                List(networkingManager.petsList.results, id: \.title) { pet in
+                    NavigationLink(destination: PetDetailsInfoView()) {
+                        PetRow(pet: pet)
+                    }
+                }
+                
             }
+            .navigationBarTitle(Text("Pet Clinic"), displayMode: .inline)
         }
     }
-    
 }
 
 
@@ -75,7 +82,7 @@ struct PetRow: View {
 
 class ImageLoader: ObservableObject {
     var objectWillChange = ObservableObjectPublisher()
-
+    
     var data = Data() {
         willSet {
             objectWillChange.send()
